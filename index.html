@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Omotayo Oladotun — Excel · Cybersecurity · App Dev</title>
+  <meta name="description" content="Omotayo Oladotun — Full-stack developer, cybersecurity expert and Excel specialist building world-class digital solutions."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Bricolage+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, query, orderBy, doc, setDoc, getDoc, increment, updateDoc }
+      from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+    const firebaseConfig = {
+      apiKey:"YOUR_API_KEY", authDomain:"YOUR_PROJECT.firebaseapp.com",
+      projectId:"YOUR_PROJECT_ID", storageBucket:"YOUR_PROJECT.appspot.com",
+      messagingSenderId:"YOUR_SENDER_ID", appId:"YOUR_APP_ID"
+    };
+    const app = initializeApp(firebaseConfig);
+    const db  = getFirestore(app);
+    window._db    = db;
+    window._fbFns = { collection, addDoc, getDocs, query, orderBy, doc, setDoc, getDoc, increment, updateDoc };
+  </script>
+
+
+  <!-- ── EmailJS SDK ── -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    window.EJS = {
+      publicKey:      'veK4dB1-GYJdeurTB',
+      serviceId:      'service_mwr361g',
+      ownerTemplate:  'template_up0bwmw',
+      clientTemplate: 'template_z6cg29n',
+    };
+    // Initialise immediately — must run before any form submit
+    emailjs.init({ publicKey: window.EJS.publicKey });
+  </script>
+</head>
+<body>
+
+<!-- ═══ PARTICLE CANVAS ═══ -->
+<canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+<!-- ═══ BACKGROUND SHAPES ═══ -->
+<div class="bg-shapes" aria-hidden="true">
+  <div class="shape shape-hex"></div>
+  <div class="shape shape-grid"></div>
+  <div class="shape shape-circuit"></div>
+  <div class="shape shape-ring ring-1"></div>
+  <div class="shape shape-ring ring-2"></div>
+  <div class="shape shape-ring ring-3"></div>
+  <div class="shape shape-dots"></div>
+  <div class="shape shape-slash"></div>
+  <div class="shape shape-cross cross-1"></div>
+  <div class="shape shape-cross cross-2"></div>
+</div>
+
+<!-- ═══ CURSOR GLOW ═══ -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" id="navbar">
+
+  <!-- ══ LOGO: Ddot — premium blended wordmark ══ -->
+  <a href="#home" class="nav-logo ddot-logo" aria-label="Ddot — Home">
+    <span class="ddot-d">D</span><span class="ddot-bullet">·</span><span class="ddot-dot">dot</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-controls">
+    <div class="visitor-pill" id="visitorPill" title="Live visitors">
+      <span class="visitor-dot"></span>
+      <span id="visitorCount">—</span>&nbsp;online
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon sun">☀</span>
+      <span class="theme-icon moon">☽</span>
+    </button>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+  </div>
+
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home"       onclick="closeMobile()">Home</a>
+  <a href="#work"       onclick="closeMobile()">Work</a>
+  <a href="#skills"     onclick="closeMobile()">Skills</a>
+  <a href="#projects"   onclick="closeMobile()">Projects</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#blog"       onclick="closeMobile()">Blog</a>
+  <a href="#reviews"    onclick="closeMobile()">Reviews</a>
+  <a href="#contact"    onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+
+    <!-- LEFT: Headline -->
+    <div class="hero-text">
+      <div class="hero-eyebrow"><span class="dot-pulse"></span>&nbsp;Available for Work</div>
+      <h1 class="hero-title">
+        <span class="line-1">Excel.</span>
+        <span class="line-2">Security.</span>
+        <span class="line-3">Code.</span>
+      </h1>
+      <p class="hero-sub">
+        Full-stack developer &amp; analyst bridging <em>advanced data intelligence</em>,
+        <em>cybersecurity architecture</em>, and <em>production-grade applications</em>.
+      </p>
+      <div class="hero-tags">
+        <span>Microsoft Excel · Power BI</span>
+        <span>Cybersecurity · Ethical Hacking</span>
+        <span>Web · Mobile · AI Apps</span>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="50">0</span><span>+</span><p>Projects</p></div>
+        <div class="stat"><span class="stat-num" data-target="24">0</span><span>+</span><p>Certifications</p></div>
+        <div class="stat"><span class="stat-num" data-target="27">0</span><span>+</span><p>Clients</p></div>
+        <div class="stat"><span class="stat-num" data-target="4">0</span><span>yrs</span><p>Experience</p></div>
+      </div>
+      <div class="hero-cta-row">
+        <a href="#work" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-outline">Get In Touch</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: Profile frame + identity card -->
+    <div class="hero-right">
+      <div class="hero-profile-wrap">
+        <div class="profile-ring-outer">
+          <div class="profile-ring-mid">
+            <div class="profile-frame" onclick="document.getElementById('profileInput').click()" title="Click to upload your photo">
+              <img id="profileImg" src="" alt="Omotayo Oladotun" style="display:none;"/>
+              <div id="profilePlaceholder" class="profile-placeholder">
+                <div class="profile-placeholder-icon">👤</div>
+                <div class="profile-placeholder-text">Click to upload<br>your photo</div>
+              </div>
+              <div class="profile-upload-hint">📷</div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-badge badge-excel">📊 Excel Expert</div>
+        <div class="profile-badge badge-sec">🔐 Certified Security</div>
+        <div class="profile-badge badge-dev">⚡ Full-Stack Dev</div>
+        <input type="file" id="profileInput" accept="image/*" style="display:none"/>
+      </div>
+
+      <!-- ══ IDENTITY CARD ══ -->
+      <div class="hero-identity-card">
+        <div class="identity-tag">// ABOUT ME</div>
+        <div class="identity-name">Olarotimi<br><span class="identity-name-bold">Oladotun</span></div>
+        <div class="identity-surname">Omotayo</div>
+        <a href="mailto:olarotimidotun99@gmail.com" class="identity-email">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+          olarotimidotun99@gmail.com
+        </a>
+        <p class="identity-bio">
+          I'm a <strong>Full-Stack Developer</strong>, <strong>Cybersecurity Specialist</strong>,
+          and <strong>Advanced Excel Engineer</strong> — three disciplines unified into one
+          rare skill set. I design and ship systems that are <em>secure by architecture,
+          data-intelligent at the core, and built to scale</em> in the real world.
+        </p>
+        <div class="identity-pills">
+          <span>🇳🇬 Nigeria</span>
+          <span>Remote-Ready</span>
+        </div>
+        <div class="identity-socials">
+          <a href="https://wa.me/+2349019665292" target="_blank" title="WhatsApp" class="id-soc wa">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://x.com/Oluwa_dot" target="_blank" title="X / Twitter" class="id-soc x">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://github.com/D4dotman" target="_blank" title="GitHub" class="id-soc gh">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="scroll-hint">scroll ↓</div>
+</section>
+
+<!-- ═══ VIEW MY WORK ═══ -->
+<section class="section" id="work">
+  <div class="section-label">// PORTFOLIO SHOWCASE</div>
+  <h2 class="section-title">View My <span class="accent">Work</span></h2>
+  <p class="section-sub">Click any project to explore deliverables and real-world outcomes.</p>
+  <div class="work-showcase-grid" id="workShowcaseGrid"></div>
+</section>
+
+<!-- Work Modal -->
+<div class="work-modal-overlay" id="workModal" role="dialog" aria-modal="true">
+  <div class="work-modal">
+    <div class="work-modal-header">
+      <div>
+        <div class="work-modal-label">PROJECT DETAILS</div>
+        <h2 id="workModalTitle"></h2>
+      </div>
+      <button class="work-modal-close" onclick="closeWorkModal()" aria-label="Close">✕</button>
+    </div>
+    <p class="work-modal-desc" id="workModalDesc"></p>
+    <div class="work-modal-tags" id="workModalTags"></div>
+    <div class="work-modal-gallery" id="workModalGallery"></div>
+  </div>
+</div>
+
+<!-- Image Lightbox -->
+<div class="img-lightbox" id="imgLightbox">
+  <button class="lb-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+  <img id="lbImg" src="" alt="Lightbox"/>
+  <div id="lbCaption" class="lb-caption"></div>
+</div>
+
+<!-- ═══ SKILLS ═══ -->
+<section class="section" id="skills">
+  <div class="section-label">// EXPERTISE</div>
+  <h2 class="section-title">Technical <span class="accent">Arsenal</span></h2>
+  <div class="skill-domains">
+
+    <div class="skill-card reveal">
+      <div class="skill-card-header">
+        <div class="skill-icon">📊</div>
+        <div><div class="skill-card-title">Microsoft Excel &amp; Data</div><div class="skill-card-sub">Power User · Automation · Analytics</div></div>
+      </div>
+      <div class="skill-items">
+        <div class="skill-bar-row"><span>Advanced Formulas &amp; Functions</span><div class="bar"><div class="bar-fill" data-w="98"></div></div></div>
+        <div class="skill-bar-row"><span>VBA Macros &amp; Automation</span><div class="bar"><div class="bar-fill" data-w="92"></div></div></div>
+        <div class="skill-bar-row"><span>Power Query / Power Pivot</span><div class="bar"><div class="bar-fill" data-w="90"></div></div></div>
+        <div class="skill-bar-row"><span>Dashboard Design</span><div class="bar"><div class="bar-fill" data-w="95"></div></div></div>
+        <div class="skill-bar-row"><span>Power BI / Data Visualization</span><div class="bar"><div class="bar-fill" data-w="88"></div></div></div>
+        <div class="skill-bar-row"><span>Financial Modelling</span><div class="bar"><div class="bar-fill" data-w="85"></div></div></div>
+      </div>
+      <div class="skill-tags"><span>Excel</span><span>Power BI</span><span>VBA</span><span>DAX</span><span>Power Query</span></div>
+    </div>
+
+    <div class="skill-card reveal reveal-delay-1">
+      <div class="skill-card-header">
+        <div class="skill-icon">🔐</div>
+        <div><div class="skill-card-title">Cybersecurity</div><div class="skill-card-sub">Threat Analysis · Ethical Hacking · SOC</div></div>
+      </div>
+      <div class="skill-items">
+        <div class="skill-bar-row"><span>Network Security &amp; Firewalls</span><div class="bar"><div class="bar-fill" data-w="91"></div></div></div>
+        <div class="skill-bar-row"><span>Penetration Testing</span><div class="bar"><div class="bar-fill" data-w="87"></div></div></div>
+        <div class="skill-bar-row"><span>SIEM / Log Analysis</span><div class="bar"><div class="bar-fill" data-w="84"></div></div></div>
+        <div class="skill-bar-row"><span>Vulnerability Assessment</span><div class="bar"><div class="bar-fill" data-w="89"></div></div></div>
+        <div class="skill-bar-row"><span>Incident Response</span><div class="bar"><div class="bar-fill" data-w="82"></div></div></div>
+        <div class="skill-bar-row"><span>Cryptography &amp; PKI</span><div class="bar"><div class="bar-fill" data-w="80"></div></div></div>
+      </div>
+      <div class="skill-tags"><span>Kali Linux</span><span>Wireshark</span><span>Metasploit</span><span>Nmap</span><span>Burp Suite</span></div>
+    </div>
+
+    <div class="skill-card reveal reveal-delay-2">
+      <div class="skill-card-header">
+        <div class="skill-icon">⚡</div>
+        <div><div class="skill-card-title">App Development</div><div class="skill-card-sub">Web · Mobile · Backend · AI</div></div>
+      </div>
+      <div class="skill-items">
+        <div class="skill-bar-row"><span>React / Next.js / TypeScript</span><div class="bar"><div class="bar-fill" data-w="96"></div></div></div>
+        <div class="skill-bar-row"><span>Node.js / Express / Python</span><div class="bar"><div class="bar-fill" data-w="93"></div></div></div>
+        <div class="skill-bar-row"><span>Firebase / MongoDB / PostgreSQL</span><div class="bar"><div class="bar-fill" data-w="90"></div></div></div>
+        <div class="skill-bar-row"><span>React Native / Flutter</span><div class="bar"><div class="bar-fill" data-w="85"></div></div></div>
+        <div class="skill-bar-row"><span>AI Integration (OpenAI, Gemini)</span><div class="bar"><div class="bar-fill" data-w="88"></div></div></div>
+        <div class="skill-bar-row"><span>DevOps / CI-CD / Docker</span><div class="bar"><div class="bar-fill" data-w="83"></div></div></div>
+      </div>
+      <div class="skill-tags"><span>React</span><span>Node</span><span>Python</span><span>Firebase</span><span>Docker</span><span>AWS</span></div>
+    </div>
+  </div>
+
+  <div class="stack-section reveal">
+    <div class="stack-label">FULL TECHNOLOGY STACK</div>
+    <div class="stack-grid">
+      <div class="stack-col"><div class="stack-col-title frontend">Frontend</div><p>React 19, Next.js 16, TypeScript, Tailwind CSS v4, Framer Motion, Three.js, Vite, HTML5, CSS3</p></div>
+      <div class="stack-col"><div class="stack-col-title backend">Backend &amp; Data</div><p>Node.js, Express, Python, FastAPI, Rust, MongoDB, PostgreSQL, Redis, Prisma, Firebase</p></div>
+      <div class="stack-col"><div class="stack-col-title ai">AI &amp; Integrations</div><p>OpenAI, Google Gemini, Groq, Amazon Bedrock, Vertex AI, LangChain, Paystack, Stripe</p></div>
+      <div class="stack-col"><div class="stack-col-title infra">Infrastructure</div><p>Vercel, AWS, Render, Docker, Socket.io, BullMQ, SSE, GSAP, Git, GitHub Actions</p></div>
+      <div class="stack-col"><div class="stack-col-title security">Security Tools</div><p>Kali Linux, Wireshark, Metasploit, Nmap, Burp Suite, Snort, OpenVAS, Splunk</p></div>
+      <div class="stack-col"><div class="stack-col-title excel-col">Excel &amp; BI</div><p>Excel 365, VBA, Power Query, Power Pivot, Power BI, DAX, XLOOKUP, VLOOKUP, Dynamic Arrays</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECTS ═══ -->
+<section class="section" id="projects">
+  <div class="section-label">// SELECTED WORK</div>
+  <h2 class="section-title">Selected <span class="accent">Projects</span></h2>
+  <div class="project-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="excel">Excel &amp; Data</button>
+    <button class="filter-btn" data-filter="security">Cybersecurity</button>
+    <button class="filter-btn" data-filter="app">App Dev</button>
+  </div>
+  <div class="projects-grid" id="projectsGrid">
+    <article class="project-card" data-cat="app">
+      <div class="project-top"><div class="project-num">01</div><div class="project-badges"><span class="badge">Next.js</span><span class="badge">Firebase</span><span class="badge">AI</span></div></div>
+      <h3>SecureLearn LMS</h3>
+      <p>Full-stack AI-powered learning management system with real-time progress tracking, adaptive quizzes, and role-based access control secured with JWT and OAuth2.</p>
+      <div class="project-stack">React · Node.js · Firebase · OpenAI · PostgreSQL</div>
+      <div class="project-links"><a href="#" class="p-link">Live Demo ↗</a><a href="#" class="p-link ghost">GitHub ↗</a></div>
+    </article>
+    <article class="project-card featured" data-cat="security">
+      <div class="project-top"><div class="project-num">02</div><div class="project-badges"><span class="badge">SOC</span><span class="badge">SIEM</span><span class="badge badge-featured">Featured</span></div></div>
+      <h3>ThreatVault Dashboard</h3>
+      <p>Enterprise-grade real-time threat intelligence dashboard integrating live SIEM data, automated incident classification, and geolocation-based attack mapping.</p>
+      <div class="project-stack">Python · ELK Stack · React · D3.js · WebSockets</div>
+      <div class="project-links"><a href="#" class="p-link">Live Demo ↗</a><a href="#" class="p-link ghost">GitHub ↗</a></div>
+    </article>
+    <article class="project-card" data-cat="excel">
+      <div class="project-top"><div class="project-num">03</div><div class="project-badges"><span class="badge">VBA</span><span class="badge">Power BI</span></div></div>
+      <h3>Financial Intelligence Suite</h3>
+      <p>Automated Excel financial modelling toolkit with VBA macros, dynamic dashboards, scenario analysis, Monte Carlo simulations and Power BI report integration.</p>
+      <div class="project-stack">Excel VBA · Power Query · Power BI · DAX · Python</div>
+      <div class="project-links"><a href="#" class="p-link">Live Demo ↗</a><a href="#" class="p-link ghost">GitHub ↗</a></div>
+    </article>
+    <article class="project-card" data-cat="app">
+      <div class="project-top"><div class="project-num">04</div><div class="project-badges"><span class="badge">React Native</span><span class="badge">AI</span></div></div>
+      <h3>CipherGuard Mobile</h3>
+      <p>Cross-platform mobile security app — AES-256 password vault, breach monitoring, 2FA manager, and AI-powered phishing link detector.</p>
+      <div class="project-stack">React Native · Expo · Firebase · Python API · AES-256</div>
+      <div class="project-links"><a href="#" class="p-link">App Store ↗</a><a href="#" class="p-link ghost">GitHub ↗</a></div>
+    </article>
+    <article class="project-card" data-cat="excel">
+      <div class="project-top"><div class="project-num">05</div><div class="project-badges"><span class="badge">Power BI</span><span class="badge">DAX</span></div></div>
+      <h3>Supply Chain Analytics Hub</h3>
+      <p>End-to-end supply chain visibility — automated Excel ETL feeding Power BI dashboards with vendor performance, lead time analysis, and cost variance tracking.</p>
+      <div class="project-stack">Excel · Power Query · Power BI · SQL Server · Python</div>
+      <div class="project-links"><a href="#" class="p-link">Live Demo ↗</a><a href="#" class="p-link ghost">GitHub ↗</a></div>
+    </article>
+    <article class="project-card featured" data-cat="app">
+      <div class="project-top"><div class="project-num">06</div><div class="project-badges"><span class="badge">Full-Stack</span><span class="badge badge-featured">Featured</span></div></div>
+      <h3>NexBank FinTech Platform</h3>
+      <p>Production-grade fintech platform with multi-currency wallets, fraud detection ML model, KYC workflow, and Paystack/Stripe integration.</p>
+      <div class="project-stack">Next.js · Node · PostgreSQL · Python ML · Stripe</div>
+      <div class="project-links"><a href="#" class="p-link">Live Demo ↗</a><a href="#" class="p-link ghost">GitHub ↗</a></div>
+    </article>
+    <article class="project-card" data-cat="security">
+      <div class="project-top"><div class="project-num">07</div><div class="project-badges"><span class="badge">Pentest</span><span class="badge">Python</span></div></div>
+      <h3>AutoRecon Toolkit</h3>
+      <p>Automated penetration testing recon framework — port scanning, CVE matching, service enumeration, and PDF report generation. Used in 15+ security audits.</p>
+      <div class="project-stack">Python · Nmap · Shodan API · SQLite · ReportLab</div>
+      <div class="project-links"><a href="#" class="p-link">Live Demo ↗</a><a href="#" class="p-link ghost">GitHub ↗</a></div>
+    </article>
+    <article class="project-card" data-cat="app">
+      <div class="project-top"><div class="project-num">08</div><div class="project-badges"><span class="badge">AI</span><span class="badge">Gemini</span></div></div>
+      <h3>DataSense AI Analyst</h3>
+      <p>Conversational AI analyst — upload any CSV/Excel and ask questions in plain English. Powered by Gemini + LangChain, returns charts and insights instantly.</p>
+      <div class="project-stack">Python · FastAPI · Gemini · LangChain · React · Recharts</div>
+      <div class="project-links"><a href="#" class="p-link">Live Demo ↗</a><a href="#" class="p-link ghost">GitHub ↗</a></div>
+    </article>
+    <article class="project-card" data-cat="excel">
+      <div class="project-top"><div class="project-num">09</div><div class="project-badges"><span class="badge">VBA</span><span class="badge">Automation</span></div></div>
+      <h3>HR Payroll Automation Engine</h3>
+      <p>Fully automated HR payroll in Excel VBA — tax calculations, leave management, payslip generation, auto email dispatch, and audit trail logging for 500+ staff.</p>
+      <div class="project-stack">Excel VBA · SMTP · Power Query · PDF Export · SQL</div>
+      <div class="project-links"><a href="#" class="p-link">Demo ↗</a><a href="#" class="p-link ghost">GitHub ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section class="section" id="experience">
+  <div class="section-label">// JOURNEY</div>
+  <h2 class="section-title">My <span class="accent">Journey</span></h2>
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">2022</div>
+        <div class="tl-role">Data Analyst  &amp; Security Consultant (Training)</div>
+        <div class="tl-company">Nexus Digital Solutions, London (Remotely)</div>
+        <p>Architecting scalable SaaS applications, conducting penetration testing engagements, and delivering advanced Excel automation solutions to enterprise clients.
+        </p>
+        <div class="tl-tags"><span>React</span><span>Pentest</span><span>Excel VBA</span><span>AWS</span></div>
+      </div>
+    </div>
+    <div class="tl-item reveal reveal-delay-1">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">2023 – 2024</div>
+        <div class="tl-role">Cybersecurity Analyst</div>
+        <div class="tl-company">CyberShield, Port Harcourt (Remotely)</div>
+        <p>Performed vulnerability assessments and SOC tier-2 incident response for financial institutions. Implemented SIEM pipelines and developed threat hunting playbooks.</p>
+        <div class="tl-tags"><span>Splunk</span><span>Wireshark</span><span>Python</span><span>ISO 27001</span></div>
+      </div>
+    </div>
+    <div class="tl-item reveal reveal-delay-2">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">2024 – Present</div>
+        <div class="tl-role">Data Analyst &amp; Excel Specialist</div>
+        <div class="tl-company"> Self Employed</div>
+        <p>Designed executive Power BI dashboards, automated reporting workflows in Excel VBA, and built financial models used in Board-level decision-making.</p>
+        <div class="tl-tags"><span>Power BI</span><span>VBA</span><span>SQL</span><span>DAX</span></div>
+      </div>
+    </div>
+    <div class="tl-item reveal reveal-delay-3">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">2024 - 2025</div>
+        <div class="tl-role">Junior Software Developer</div>
+        <div class="tl-company">TechBridge, Lagos (Remotely)</div>
+        <p>Built and deployed web and mobile applications. Integrated payment gateways, developed RESTful APIs, and led junior developer training on TypeScript and React.</p>
+        <div class="tl-tags"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Paystack</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="certs-section reveal">
+    <div class="certs-label">CERTIFICATIONS</div>
+    <div class="certs-grid">
+      <div class="cert-item"><div class="cert-icon">🏆</div><div><strong>CompTIA Security+</strong><br><small>CompTIA</small></div></div>
+      <div class="cert-item"><div class="cert-icon">🏆</div><div><strong>CEH – Certified Ethical Hacker</strong><br><small>EC-Council</small></div></div>
+      <div class="cert-item"><div class="cert-icon">🏆</div><div><strong>Microsoft Excel Expert (MOS)</strong><br><small>Microsoft</small></div></div>
+      <div class="cert-item"><div class="cert-icon">🏆</div><div><strong>AWS Solutions Architect</strong><br><small>Amazon Web Services</small></div></div>
+      <div class="cert-item"><div class="cert-icon">🏆</div><div><strong>Google Cybersecurity Certificate</strong><br><small>Google / Coursera</small></div></div>
+      <div class="cert-item"><div class="cert-icon">🏆</div><div><strong>Meta React Developer</strong><br><small>Meta / Coursera</small></div></div>
+      <div class="cert-item"><div class="cert-icon">🏆</div><div><strong>Power BI Data Analyst</strong><br><small>Microsoft</small></div></div>
+      <div class="cert-item"><div class="cert-icon">🏆</div><div><strong>CompTIA Network+</strong><br><small>CompTIA</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BLOG ═══ -->
+<section class="section" id="blog">
+  <div class="section-label">// INSIGHTS</div>
+  <h2 class="section-title">Latest <span class="accent">Articles</span></h2>
+  <p class="section-sub">Technical write-ups, tutorials, and thoughts on Excel, cybersecurity, and software engineering.</p>
+  <div class="blog-admin" id="blogAdmin">
+    <div class="blog-admin-inner">
+      <div class="admin-label">// PUBLISH NEW POST</div>
+      <div class="form-row">
+        <div class="form-group"><label>Title *</label><input type="text" id="blogTitle" placeholder="Article title"/></div>
+        <div class="form-group"><label>Category</label>
+          <select id="blogCat">
+            <option value="excel">Excel &amp; Data</option>
+            <option value="security">Cybersecurity</option>
+            <option value="dev">App Development</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label>Excerpt</label><textarea id="blogExcerpt" rows="2" placeholder="Short summary shown on card…"></textarea></div>
+      <div class="form-group"><label>Full Content</label><textarea id="blogContent" rows="8" placeholder="Write your article here…"></textarea></div>
+      <div class="form-group"><label>Cover Image URL (optional)</label><input type="text" id="blogImg" placeholder="https://…"/></div>
+      <button class="btn-primary" onclick="publishPost()">Publish Post →</button>
+      <div id="blogPublishMsg" style="margin-top:0.75rem;font-size:0.85rem;color:var(--accent)"></div>
+    </div>
+  </div>
+  <div class="blog-grid" id="blogGrid"></div>
+  <div class="work-modal-overlay" id="blogModal" role="dialog" aria-modal="true">
+    <div class="work-modal blog-post-modal">
+      <div class="work-modal-header">
+        <div>
+          <div class="work-modal-label" id="blogModalCat"></div>
+          <h2 id="blogModalTitle"></h2>
+          <div class="blog-modal-meta" id="blogModalMeta"></div>
+        </div>
+        <button class="work-modal-close" onclick="closeBlogModal()" aria-label="Close">✕</button>
+      </div>
+      <div class="blog-modal-body" id="blogModalBody"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REVIEWS ═══ -->
+<section class="section" id="reviews">
+  <div class="section-label">// SOCIAL PROOF</div>
+  <h2 class="section-title">Client <span class="accent">Reviews</span></h2>
+  <p class="section-sub">Don't just take my word for it — 37 clients across Nigeria and the UK (remotely).</p>
+  <div class="reviews-ticker-wrap">
+    <div class="reviews-ticker" id="reviewsTicker"></div>
+  </div>
+  <div class="reviews-ticker-wrap" style="margin-top:1rem">
+    <div class="reviews-ticker reverse" id="reviewsTicker2"></div>
+  </div>
+  <div class="reviews-aggregate">
+    <div class="agg-score">4.9</div>
+    <div class="agg-stars">★★★★★</div>
+    <div class="agg-count">from 27 verified clients</div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="section" id="faq">
+  <div class="section-label">// Q&amp;A</div>
+  <h2 class="section-title">Frequently <span class="accent">Asked</span></h2>
+  <div class="faq-list">
+    <div class="faq-item"><button class="faq-q" aria-expanded="false">What services do you offer?</button><div class="faq-a"><p>Three core areas: (1) <strong>Advanced Excel &amp; Data Analytics</strong> — dashboards, VBA automation, Power BI reports, financial modelling; (2) <strong>Cybersecurity</strong> — penetration testing, vulnerability assessments, security audits, SOC support; and (3) <strong>Application Development</strong> — web apps, mobile apps, AI-powered tools, and full-stack SaaS platforms.</p></div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false">How long does a typical project take?</button><div class="faq-a"><p>Timelines vary by scope. Excel automation: 3–7 days. Cybersecurity audit: 5–14 days. Full-stack web app: 3–8 weeks. I always provide a detailed timeline estimate before work begins.</p></div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false">Do you work with clients in Nigeria and the UK?</button><div class="faq-a"><p>Yes — I actively serve clients in both Nigeria and the UK(remotely), as well as internationally. I'm comfortable working across time zones. Payments accepted via bank transfer, Paystack, and Stripe.</p></div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false">Can you sign an NDA and keep my data confidential?</button><div class="faq-a"><p>Absolutely. I routinely sign NDAs, especially for cybersecurity and financial projects. All client data is handled with strict confidentiality, encrypted at rest and in transit. GDPR compliance is standard.</p></div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false">What technologies do you specialise in?</button><div class="faq-a"><p>Core stack: TypeScript/React/Next.js frontend, Node.js/Python backend, PostgreSQL/MongoDB/Firebase. Cybersecurity: Kali Linux, Metasploit, Wireshark, Burp Suite, Splunk. Excel/BI: VBA, Power Query, Power BI, DAX.</p></div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false">Do you offer post-delivery support?</button><div class="faq-a"><p>Yes. Every project includes a minimum 14-day post-delivery support window at no extra cost. Monthly retainer packages available for ongoing maintenance, security patches, and feature updates.</p></div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false">How do I get a quote?</button><div class="faq-a"><p>Fill out the contact form below with your project details. I typically respond within 24 hours with a tailored proposal. For urgent requests, reach me directly via WhatsApp or Gmail.</p></div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false">What makes you different from other developers?</button><div class="faq-a"><p>I'm the rare combination of Excel power user, cybersecurity professional, and full-stack developer — all in one. Systems I build are functional, beautiful, secure, and data-driven from the ground up. No outsourcing. No templates. Everything custom-crafted.</p></div></div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="section" id="contact">
+  <div class="section-label">// LET'S BUILD</div>
+  <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+  <div class="contact-layout">
+
+    <div class="contact-info">
+      <div class="contact-status"><span class="dot-pulse"></span>&nbsp;Available for new projects</div>
+      <p class="contact-intro">Whether you need a cybersecurity audit, an Excel automation system, or a world-class web application — let's build something legendary together.</p>
+
+      <!-- 3 social cards: WhatsApp · X · GitHub -->
+      <div class="contact-social-cards">
+
+        <a href="https://wa.me/+2349019665292" target="_blank" class="social-card whatsapp">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div class="social-card-text"><strong>WhatsApp</strong><span>Chat directly — fast responses</span></div>
+          <div class="social-card-arrow">↗</div>
+        </a>
+
+        <a href="https://x.com/Oluwa_dot" target="_blank" class="social-card twitter">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </div>
+          <div class="social-card-text"><strong>Twitter / X</strong><span>Follow updates &amp; DM me</span></div>
+          <div class="social-card-arrow">↗</div>
+        </a>
+
+        <a href="https://github.com/D4dotman" target="_blank" class="social-card github">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </div>
+          <div class="social-card-text"><strong>GitHub</strong><span>Explore my open-source code</span></div>
+          <div class="social-card-arrow">↗</div>
+        </a>
+
+        <!-- Gmail card -->
+        <a href="mailto:olarotimidotun99@gmail.com" class="social-card gmail">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.910 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+          </div>
+          <div class="social-card-text"><strong>Gmail</strong><span>olarotimidotun99@gmail.com</span></div>
+          <div class="social-card-arrow">↗</div>
+        </a>
+
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-group"><label for="fname">Full Name *</label><input type="text" id="fname" name="name" placeholder="Enter Your Full Name" required/></div>
+        <div class="form-group"><label for="femail">Email Address *</label><input type="email" id="femail" name="email" placeholder="you@company.com" required/></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fservice">Service Needed *</label>
+          <select id="fservice" name="service" required>
+            <option value="">Select a service</option>
+            <option>Excel &amp; Data Analytics</option>
+            <option>Cybersecurity Audit / Pentest</option>
+            <option>Web Application Development</option>
+            <option>Mobile App Development</option>
+            <option>AI Integration</option>
+            <option>Full-Stack Project</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fbudget">Budget Range</label>
+          <select id="fbudget" name="budget">
+            <option value="">Select range</option>
+            <option>Under £500 / ₦500k</option>
+            <option>£500 – £2,000 / ₦500k – ₦2M</option>
+            <option>£2,000 – £5,000 / ₦2M – ₦5M</option>
+            <option>£5,000+ / ₦5M+</option>
+            <option>Prefer to discuss</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label for="fmessage">Project Details *</label><textarea id="fmessage" name="message" rows="5" placeholder="Describe your project, goals, and any specific requirements…" required></textarea></div>
+      <button type="submit" class="btn-primary full-w" id="submitBtn">
+        <span class="btn-text">✉&nbsp; Send Message</span>
+        <span class="btn-loader" hidden>⏳&nbsp; Sending…</span>
+      </button>
+
+      <div class="form-success" id="formSuccess" hidden>
+        <div class="form-feedback-icon">✅</div>
+        <div>
+          <strong>Message sent successfully!</strong><br>
+          Your details have been delivered to Omotayo. Expect a reply within 24 hours.
+        </div>
+      </div>
+
+      <div class="form-error" id="formError" hidden>
+        ⚠️ Please fill in all required fields marked with *
+      </div>
+
+      <div class="form-config-warn" id="formConfigWarn" hidden>
+        ⚙️ Email not configured yet. See EMAILJS_SETUP.md to connect — takes 5 minutes.
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <!-- Footer logo — Ddot -->
+        <a href="#home" class="ddot-logo footer-ddot-logo" aria-label="Ddot">
+          <span class="ddot-d">D</span><span class="ddot-bullet">·</span><span class="ddot-dot">dot</span>
+        </a>
+        <p>Excel · Cybersecurity · App Development<br/>Building world-class digital solutions.</p>
+        <div class="footer-status"><span class="dot-pulse"></span>&nbsp;STATUS: AVAILABLE</div>
+        <div class="footer-social-row">
+          <a href="https://wa.me/+2349019665292" target="_blank" title="WhatsApp" class="f-soc">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://x.com/Oluwa_dot" target="_blank" title="X" class="f-soc">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://github.com/D4dotman" target="_blank" title="GitHub" class="f-soc">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="mailto:olarotimidotun99@gmail.com" title="Gmail" class="f-soc">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.910 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-nav-col">
+          <strong>Directory</strong>
+          <a href="#home">Home</a><a href="#work">Work</a><a href="#skills">Skills</a>
+          <a href="#projects">Projects</a><a href="#experience">Experience</a>
+          <a href="#blog">Blog</a><a href="#reviews">Reviews</a>
+          <a href="#faq">FAQ</a><a href="#contact">Contact</a>
+        </div>
+        <div class="footer-nav-col">
+          <strong>Services</strong>
+          <a href="#skills">Excel &amp; BI</a>
+          <a href="#skills">Cybersecurity</a>
+          <a href="#skills">Web Dev</a>
+          <a href="#skills">Mobile Dev</a>
+          <a href="#skills">AI Integration</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© <span id="footerYear"></span> Omotayo Oladotun (Dotrix). All rights reserved. Handcrafted with precision.</div>
+      <div class="footer-legal"><a href="#">Privacy Policy</a> · <a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
