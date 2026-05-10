@@ -298,19 +298,6 @@ const worksData = [
     ]
   },
   {
-    id:'fintech-app',
-    title:'NexBank FinTech Platform',
-    description:'Production-grade fintech platform with multi-currency wallets, real-time transaction processing, fraud detection ML model, KYC workflow, and Paystack/Stripe integration.',
-    tags:['Next.js','Node.js','PostgreSQL','Stripe','Paystack'],
-    cover:'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=85',
-    images:[
-      { src:'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&q=85', caption:'Codebase — Next.js app router, TypeScript strict mode, ESLint clean' },
-      { src:'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&q=85', caption:'Backend API — Node.js REST endpoints, JWT auth, rate limiting' },
-      { src:'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=900&q=85', caption:'Database Schema — PostgreSQL, Prisma ORM, transaction audit tables' },
-      { src:'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&q=85', caption:'Deployment — Vercel edge, CI/CD pipeline, uptime monitoring' },
-    ]
-  },
-  {
     id:'powerbi-report',
     title:'Supply Chain Power BI Report',
     description:'End-to-end supply chain analytics. Power Query ETL pipeline processing 500k+ rows, with DAX measures, custom visuals, and drill-through pages for vendor performance.',
@@ -323,17 +310,17 @@ const worksData = [
       { src:'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=900&q=85', caption:'Cost Variance — DAX YoY comparison, budget vs actual waterfall chart' },
     ]
   },
-  {
+   {
     id:'mobile-app',
-    title:'CipherGuard Security App',
-    description:'Cross-platform mobile security app — AES-256 password vault, real-time breach monitoring, 2FA TOTP manager, and AI phishing link detector.',
-    tags:['React Native','Expo','Firebase','AES-256','AI'],
-    cover:'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=85',
+    title:'Ethical Hacking Lab',
+    description:'Hands-on ethical hacking engagements covering network exploitation, privilege escalation, and post-exploitation techniques using industry-standard tools on real target environments.',
+    tags:['Kali Linux','Metasploit','Nmap','Privilege Escalation','CTF'],
+    cover:'https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&q=85',
     images:[
-      { src:'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=900&q=85', caption:'App Architecture — React Native screens, Expo config, navigation stack' },
-      { src:'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=900&q=85', caption:'Encryption Layer — AES-256 implementation, key derivation, secure store' },
-      { src:'https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=900&q=85', caption:'Breach Monitor — HaveIBeenPwned API integration, real-time alert engine' },
-      { src:'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=900&q=85', caption:'2FA Module — TOTP RFC 6238 implementation, QR scanner, export flow' },
+      { src:'https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=900&q=85', caption:'Kali Linux setup — tools configured, target scoping, recon phase' },
+      { src:'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=900&q=85', caption:'Metasploit Framework — exploit selection, payload delivery, shell access' },
+      { src:'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=900&q=85', caption:'Privilege Escalation — local exploit, root access, persistence check' },
+      { src:'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=85', caption:'Post Exploitation — data exfil simulation, cleanup, full report written' },
     ]
   },
   {
