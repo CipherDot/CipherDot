@@ -263,12 +263,12 @@ const worksData = [
     title:'Executive Excel Dashboard',
     description:'A dynamic, fully automated executive dashboard built in Excel with Power Query, VBA, and conditional formatting. Pulls live data, calculates KPIs, and generates one-click PDF reports.',
     tags:['Excel','VBA','Power Query','Dashboard'],
-    cover:'images/excel-1.jpg',
+    cover:'images/excel-1. jpg',
     images:[
-      { src:'images/excel-1.jpg', caption:'Main KPI Dashboard — live data, conditional formatting, one-click export' },
-      { src:'images/excel-2.jpg', caption:'Revenue Trend Analysis — Power Query ETL pipeline + dynamic charts' },
-      { src:'images/excel-3.jpg', caption:'Automated Report Generator — VBA macro, PDF output, scheduled email' },
-      { src:'images/excel-4.jpg', caption:'Data Model & Relationships — Power Pivot star schema, DAX measures' },
+      { src:'images/excel-1. jpg', caption:'Main KPI Dashboard — live data, conditional formatting, one-click export' },
+      { src:'images/excel-2. jpg', caption:'Revenue Trend Analysis — Power Query ETL pipeline + dynamic charts' },
+      { src:'images/excel-3. jpg', caption:'Automated Report Generator — VBA macro, PDF output, scheduled email' },
+      { src:'images/excel-4. jpg', caption:'Data Model & Relationships — Power Pivot star schema, DAX measures' },
     ]
   },
   {
@@ -276,12 +276,12 @@ const worksData = [
     title:'Penetration Testing Report',
     description:'Full-scope black-box penetration test of a fintech web application. Discovered 14 vulnerabilities including IDOR, XSS, and weak session management. Detailed remediation roadmap delivered.',
     tags:['Penetration Testing','Burp Suite','Python','OWASP'],
-    cover:'images/pentesting-1.jpg',
+    cover:'images/pentesting-1. jpg',
     images:[
-      { src:'images/pentesting-1.jpg', caption:'Recon & Enumeration — Nmap port scan, service fingerprinting output' },
-      { src:'images/pentesting-2.jpg', caption:'Burp Suite Intercept — IDOR payload, account ID manipulation PoC' },
-      { src:'images/pentesting-3.jpg', caption:'XSS Exploitation — reflected payload, session hijack vector confirmed' },
-      { src:'images/pentesting-4.jpg', caption:'Final Risk Matrix — CVSS scoring, priority remediation roadmap' },
+      { src:'images/pentesting-1. jpg', caption:'Recon & Enumeration — Nmap port scan, service fingerprinting output' },
+      { src:'images/pentesting-2. jpg', caption:'Burp Suite Intercept — IDOR payload, account ID manipulation PoC' },
+      { src:'images/pentesting-3. jpg', caption:'XSS Exploitation — reflected payload, session hijack vector confirmed' },
+      { src:'images/pentesting-4. jpg', caption:'Final Risk Matrix — CVSS scoring, priority remediation roadmap' },
     ]
   },
   {
@@ -289,12 +289,12 @@ const worksData = [
     title:'SIEM Threat Intelligence Dashboard',
     description:'Real-time threat detection dashboard integrating ELK stack data with a React frontend. Displays geo-mapped attacks, alert severity distribution, and automated incident timelines.',
     tags:['SIEM','ELK Stack','React','D3.js','WebSockets'],
-    cover:'images/siem-1.jpg',
+    cover:'images/siem-1. jpg',
     images:[
-      { src:'images/siem-1.jpg', caption:'Live Threat Map — geo-located attacks, real-time WebSocket data feed' },
-      { src:'images/siem-2.jpg', caption:'Alert Severity Dashboard — P1/P2/P3 auto-classification, trend lines' },
-      { src:'images/siem-3.jpg', caption:'Incident Timeline — automated correlation, attack chain visualisation' },
-      { src:'images/siem-4.jpg', caption:'Threat Intel Feed — IOC enrichment, live CVE cross-reference panel' },
+      { src:'images/siem-1. jpg', caption:'Live Threat Map — geo-located attacks, real-time WebSocket data feed' },
+      { src:'images/siem-2. jpg', caption:'Alert Severity Dashboard — P1/P2/P3 auto-classification, trend lines' },
+      { src:'images/siem-3. jpg', caption:'Incident Timeline — automated correlation, attack chain visualisation' },
+      { src:'images/siem-4. jpg', caption:'Threat Intel Feed — IOC enrichment, live CVE cross-reference panel' },
     ]
   },
   {
@@ -302,12 +302,12 @@ const worksData = [
     title:'Supply Chain Power BI Report',
     description:'End-to-end supply chain analytics. Power Query ETL pipeline processing 500k+ rows, with DAX measures, custom visuals, and drill-through pages for vendor performance.',
     tags:['Power BI','DAX','Power Query','SQL Server'],
-    cover:'images/powerbi-1.jpg',
+    cover:'images/powerbi-1. jpg',
     images:[
-      { src:'images/powerbi-1.jpg', caption:'Executive Summary — top-level KPIs, on-time delivery rate, cost overview' },
-      { src:'images/powerbi-2.jpg', caption:'Vendor Scorecard — quality rating matrix, lead time variance analysis' },
-      { src:'images/powerbi-3.jpg', caption:'Lead Time Drill-through — region, product category, supplier breakdown' },
-      { src:'images/powerbi-4.jpg', caption:'Cost Variance — DAX YoY comparison, budget vs actual waterfall chart' },
+      { src:'images/powerbi-1. jpg', caption:'Executive Summary — top-level KPIs, on-time delivery rate, cost overview' },
+      { src:'images/powerbi-2. jpg', caption:'Vendor Scorecard — quality rating matrix, lead time variance analysis' },
+      { src:'images/powerbi-3. jpg', caption:'Lead Time Drill-through — region, product category, supplier breakdown' },
+      { src:'images/powerbi-4. jpg', caption:'Cost Variance — DAX YoY comparison, budget vs actual waterfall chart' },
     ]
   },
    {
@@ -315,12 +315,12 @@ const worksData = [
     title:'Ethical Hacking Lab',
     description:'Hands-on ethical hacking engagements covering network exploitation, privilege escalation, and post-exploitation techniques using industry-standard tools on real target environments.',
     tags:['Kali Linux','Metasploit','Nmap','Privilege Escalation','CTF'],
-    cover:'images/mobile-1.jpg',
+    cover:'images/mobile-1. jpg',
     images:[
-      { src:'images/mobile-1.jpg', caption:'Kali Linux setup — tools configured, target scoping, recon phase' },
-      { src:'images/mobile-2.jpg', caption:'Metasploit Framework — exploit selection, payload delivery, shell access' },
-      { src:'images/mobile-3.jpg', caption:'Privilege Escalation — local exploit, root access, persistence check' },
-      { src:'images/mobile-4.jpg', caption:'Post Exploitation — data exfil simulation, cleanup, full report written' },
+      { src:'images/mobile-1. jpg', caption:'Kali Linux setup — tools configured, target scoping, recon phase' },
+      { src:'images/mobile-2. jpg', caption:'Metasploit Framework — exploit selection, payload delivery, shell access' },
+      { src:'images/mobile-3. jpg', caption:'Privilege Escalation — local exploit, root access, persistence check' },
+      { src:'images/mobile-4. jpg', caption:'Post Exploitation — data exfil simulation, cleanup, full report written' },
     ]
   },
   {
@@ -328,12 +328,12 @@ const worksData = [
     title:'VBA Payroll Automation Engine',
     description:'Complete HR payroll system in Excel VBA. Handles 500+ employees, auto-calculates tax/pension/NI, generates PDF payslips, and emails them via SMTP automatically.',
     tags:['Excel VBA','SMTP','PDF Export','Power Query'],
-    cover:'images/payroll-1.jpg',
+    cover:'images/payroll-1. jpg',
     images:[
-      { src:'images/payroll-1.jpg', caption:'Payroll Input Sheet — employee master data, structured data validation' },
-      { src:'images/payroll-2.jpg', caption:'Tax Engine — PAYE/NHIS band calculation, pension auto-enrolment VBA' },
-      { src:'images/payroll-3.jpg', caption:'Payslip Template — branded PDF layout, auto-populated, SMTP dispatch' },
-      { src:'images/payroll-4.jpg', caption:'Audit Trail — timestamped log, approval workflow, error flag system' },
+      { src:'images/payroll-1. jpg', caption:'Payroll Input Sheet — employee master data, structured data validation' },
+      { src:'images/payroll-2. jpg', caption:'Tax Engine — PAYE/NHIS band calculation, pension auto-enrolment VBA' },
+      { src:'images/payroll-3. jpg', caption:'Payslip Template — branded PDF layout, auto-populated, SMTP dispatch' },
+      { src:'images/payroll-4. jpg', caption:'Audit Trail — timestamped log, approval workflow, error flag system' },
     ]
   },
 ];
