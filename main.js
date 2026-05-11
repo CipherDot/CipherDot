@@ -336,19 +336,6 @@ const worksData = [
       { src:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=85', caption:'Audit Trail — timestamped log, approval workflow, error flag system' },
     ]
   },
-  {
-    id:'ai-analyst',
-    title:'DataSense AI Analyst Tool',
-    description:'Conversational AI data analyst. Upload any CSV or Excel file and ask plain English questions. Powered by Gemini + LangChain — returns live charts and insights.',
-    tags:['Python','FastAPI','Gemini','LangChain','React'],
-    cover:'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=85',
-    images:[
-      { src:'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=900&q=85', caption:'Python Backend — FastAPI routes, LangChain agent, Gemini integration' },
-      { src:'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&q=85', caption:'Frontend Interface — React query panel, file upload, live chart render' },
-      { src:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=85', caption:'Data Analysis Output — auto-generated Recharts, statistical summary' },
-      { src:'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=900&q=85', caption:'File Processing — CSV/Excel parser, column inference, schema detection' },
-    ]
-  },
 ];
 
 function buildWorkShowcase() {
