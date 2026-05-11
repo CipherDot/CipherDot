@@ -276,12 +276,12 @@ const worksData = [
     title:'Penetration Testing Report',
     description:'Full-scope black-box penetration test of a fintech web application. Discovered 14 vulnerabilities including IDOR, XSS, and weak session management. Detailed remediation roadmap delivered.',
     tags:['Penetration Testing','Burp Suite','Python','OWASP'],
-    cover:'images/pentest-1.jpg',
+    cover:'images/pentesting-1.jpg',
     images:[
-      { src:'images/pentest-1.jpg', caption:'Recon & Enumeration — Nmap port scan, service fingerprinting output' },
-      { src:'images/pentest-2.jpg', caption:'Burp Suite Intercept — IDOR payload, account ID manipulation PoC' },
-      { src:'images/pentest-3.jpg', caption:'XSS Exploitation — reflected payload, session hijack vector confirmed' },
-      { src:'images/pentest-4.jpg', caption:'Final Risk Matrix — CVSS scoring, priority remediation roadmap' },
+      { src:'images/pentesting-1.jpg', caption:'Recon & Enumeration — Nmap port scan, service fingerprinting output' },
+      { src:'images/pentesting-2.jpg', caption:'Burp Suite Intercept — IDOR payload, account ID manipulation PoC' },
+      { src:'images/pentesting-3.jpg', caption:'XSS Exploitation — reflected payload, session hijack vector confirmed' },
+      { src:'images/pentesting-4.jpg', caption:'Final Risk Matrix — CVSS scoring, priority remediation roadmap' },
     ]
   },
   {
