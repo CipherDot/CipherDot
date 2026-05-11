@@ -294,7 +294,7 @@ const worksData = [
       { src:'images/siem-1.jpg', caption:'Live Threat Map — geo-located attacks, real-time WebSocket data feed' },
       { src:'images/siem-2.jpg', caption:'Alert Severity Dashboard — P1/P2/P3 auto-classification, trend lines' },
       { src:'images/siem-3.jpg', caption:'Incident Timeline — automated correlation, attack chain visualisation' },
-      { src:'images/siem-3.jpg', caption:'Threat Intel Feed — IOC enrichment, live CVE cross-reference panel' },
+      { src:'images/siem-4.jpg', caption:'Threat Intel Feed — IOC enrichment, live CVE cross-reference panel' },
     ]
   },
   {
@@ -307,7 +307,7 @@ const worksData = [
       { src:'images/powerbi-1.jpg', caption:'Executive Summary — top-level KPIs, on-time delivery rate, cost overview' },
       { src:'images/powerbi-2.jpg', caption:'Vendor Scorecard — quality rating matrix, lead time variance analysis' },
       { src:'images/powerbi-3.jpg', caption:'Lead Time Drill-through — region, product category, supplier breakdown' },
-      { src:'images/powerbi-3.jpg', caption:'Cost Variance — DAX YoY comparison, budget vs actual waterfall chart' },
+      { src:'images/powerbi-4.jpg', caption:'Cost Variance — DAX YoY comparison, budget vs actual waterfall chart' },
     ]
   },
    {
